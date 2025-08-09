@@ -5,19 +5,7 @@ import requests
 import time
 import gdown
 
-def download_large_file():
-    # Use direct download link format for Google Drive
-    url = "https://drive.google.com/uc?id=1RhPvI5aB_ubvQ2v2reFWIfSIj4_bzehK"
-    output = "model/similarity.pkl"
-    # Create 'model' directory if it doesn't exist
-    if not os.path.exists("model"):
-        os.makedirs("model")
-    if not os.path.exists(output):
-        st.info("Downloading large similarity file, please wait...")
-        gdown.download(url, output, quiet=False)
 
-# Download the large file if not present
-download_large_file()
 
 # Load the similarity matrix
 similarity = pickle.load(open('model/similarity.pkl', 'rb'))
